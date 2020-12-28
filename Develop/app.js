@@ -37,7 +37,7 @@ inquirer.prompt([
     }
 ])
 .then(answers => {
-    if(answers.EmployeeType === 'Engineer'){
+    if(answers.employeeType === 'Engineer'){
         inquirer.prompt([
             {
                 type: "input",
@@ -47,7 +47,7 @@ inquirer.prompt([
         ]).then(engineerAnswers => {
             console.log(answers, engineerAnswers);
         })
-    }else if(answers.EmployeeType == 'Intern'){
+    }else if(answers.employeeType === 'Intern'){
         inquirer.prompt([
             {
                 type: "input",
