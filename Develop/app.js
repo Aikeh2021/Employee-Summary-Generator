@@ -21,12 +21,19 @@ inquirer.prompt([
         type: "number",
         name: "employeeID",
         message: "What is your employee ID number?"
-    }
+    },
 
     {
         type: "input",
         name: "employeeEmail",
         message: "What is your preferred email address?"
+    },
+
+    {
+        type: "list",
+        name: "employeeType",
+        message: "What is your classification at this company?",
+        choices: ["Employee", "Engineer", "Intern", "Manager"]
     }
 ])
 
