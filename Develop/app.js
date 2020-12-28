@@ -13,41 +13,42 @@ const render = require("./lib/htmlRenderer");
 inquirer.prompt([
     {
         type: "string",
-        name: "employeeName",
+        name: "name",
         message: "What is your name (first and last)?"
     },
 
     {
         type: "number",
-        name: "employeeID",
+        name: "id",
         message: "What is your employee ID number?"
     },
 
     {
-        type: "input",
-        name: "employeeEmail",
+        type: "string",
+        name: "email",
         message: "What is your preferred email address?"
     },
 
     {
         type: "list",
-        name: "employeeType",
+        name: "role",
         message: "What is your classification at this company?",
         choices: ["Engineer", "Intern", "Manager"]
     }
 ])
 .then(answers => {
-    if(answers.employeeType === 'Engineer'){
+    if(answers.role === 'Engineer'){
         inquirer.prompt([
             {
                 type: "input",
-                name: "gitHubUser",
+                name: "gitHub",
                 message: "What is your GitHub username?"
             }
         ]).then(engineerAnswers => {
-            console.log(answers, engineerAnswers);
+            renderEngineer();
+            console.log(error);
         })
-    }else if(answers.employeeType === 'Intern'){
+    }else if(answers.role === 'Intern'){
         inquirer.prompt([
             {
                 type: "input",
@@ -55,7 +56,7 @@ inquirer.prompt([
                 message: "What college or university do you attend?"
             }
         ]).then(internAnswers => {
-            console.log(answers, internAnswers);
+            renderIntern();
         })
     }else{
         inquirer.prompt([
@@ -65,9 +66,11 @@ inquirer.prompt([
                 message: "What is your office number?"
             }
         ]).then(managerAnswers =>{
-            console.log(answers, managerAnswers);
+            renderManager();
+            console.log(error);
         })
     }
+    
 })
 
 // Write code to use inquirer to gather information about the development team members,
