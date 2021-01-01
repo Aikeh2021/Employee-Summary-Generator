@@ -10,6 +10,7 @@ const outputPath = path.join(OUTPUT_DIR, "team.html");
 
 const render = require("./lib/htmlRenderer");
 
+
 inquirer.prompt([
     {
         type: "string",
@@ -45,7 +46,7 @@ inquirer.prompt([
                 message: "What is your GitHub username?"
             }
         ]).then(engineerAnswers => {
-            renderEngineer();
+            render([Engineer]);
             console.log(error);
         })
     }else if(answers.role === 'Intern'){
@@ -56,7 +57,7 @@ inquirer.prompt([
                 message: "What college or university do you attend?"
             }
         ]).then(internAnswers => {
-            renderIntern();
+            render([Intern]);
         })
     }else{
         inquirer.prompt([
@@ -66,12 +67,118 @@ inquirer.prompt([
                 message: "What is your office number?"
             }
         ]).then(managerAnswers =>{
-            renderManager();
+            render([Manager]);
             console.log(error);
         })
     }
     
 })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// inquirer.prompt([
+//     {
+//         type: "string",
+//         name: "name",
+//         message: "What is your name (first and last)?"
+//     },
+
+//     {
+//         type: "number",
+//         name: "id",
+//         message: "What is your employee ID number?"
+//     },
+
+//     {
+//         type: "string",
+//         name: "email",
+//         message: "What is your preferred email address?"
+//     },
+
+//     {
+//         type: "list",
+//         name: "role",
+//         message: "What is your classification at this company?",
+//         choices: ["Engineer", "Intern", "Manager"]
+//     }
+// ])
+// .then(answers => {
+//     if(answers.role === 'Engineer'){
+//         inquirer.prompt([
+//             {
+//                 type: "input",
+//                 name: "gitHub",
+//                 message: "What is your GitHub username?"
+//             }
+//         ]).then(engineerAnswers => {
+//             render([Engineer]);
+//             console.log(error);
+//         })
+//     }else if(answers.role === 'Intern'){
+//         inquirer.prompt([
+//             {
+//                 type: "input",
+//                 name: "school",
+//                 message: "What college or university do you attend?"
+//             }
+//         ]).then(internAnswers => {
+//             render([Intern]);
+//         })
+//     }else{
+//         inquirer.prompt([
+//             {
+//                 type: "input",
+//                 name: "officeNumber",
+//                 message: "What is your office number?"
+//             }
+//         ]).then(managerAnswers =>{
+//             render([Manager]);
+//             console.log(error);
+//         })
+//     }
+    
+// })
 
 // Write code to use inquirer to gather information about the development team members,
 // and to create objects for each team member (using the correct classes as blueprints!)
