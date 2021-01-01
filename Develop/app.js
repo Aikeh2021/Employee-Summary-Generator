@@ -42,36 +42,80 @@ inquirer.prompt([
                     type: "string",
                     name: "email",
                     message: "What is your preferred email address?"
-                },
+                }
 
             ]).then(partialEmployee => {
                 let employee = {
-                    ...partialEmployee,
-                    ...answer
+                    ...answer,
+                    ...partialEmployee
                 };
                 console.log(employee);
             })
-        }else if(answers.role === 'Intern'){
+        }else if(answer.role === 'Intern'){
             inquirer.prompt([
                 {
                     type: "input",
                     name: "school",
                     message: "What college or university do you attend?"
+                },
+
+                {
+                    type: "string",
+                    name: "name",
+                    message: "What is your name (first and last)?"
+                },
+            
+                {
+                    type: "number",
+                    name: "id",
+                    message: "What is your employee ID number?"
+                },
+            
+                {
+                    type: "string",
+                    name: "email",
+                    message: "What is your preferred email address?"
                 }
-            ]).then(employee => {
+
+            ]).then(partialEmployee => {
+                let employee = {
+                    ...answer,
+                    ...partialEmployee
+                };
                 console.log(employee);
-                console.log(error);
             })
-        }else{
+        }else if(answer.role === 'Manager'){
             inquirer.prompt([
                 {
                     type: "input",
                     name: "officeNumber",
                     message: "What is your office number?"
+                },
+
+                {
+                    type: "string",
+                    name: "name",
+                    message: "What is your name (first and last)?"
+                },
+            
+                {
+                    type: "number",
+                    name: "id",
+                    message: "What is your employee ID number?"
+                },
+            
+                {
+                    type: "string",
+                    name: "email",
+                    message: "What is your preferred email address?"
                 }
-            ]).then(employee =>{
+                
+            ]).then(partialEmployee => {
+                let employee = {
+                    ...answer,
+                    ...partialEmployee
+                };
                 console.log(employee);
-                console.log(error);
             })
         }
         
