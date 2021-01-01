@@ -10,77 +10,74 @@ const outputPath = path.join(OUTPUT_DIR, "team.html");
 
 const render = require("./lib/htmlRenderer");
 
-
 inquirer.prompt([
-    {
-        type: "string",
-        name: "name",
-        message: "What is your name (first and last)?"
-    },
-
-    {
-        type: "number",
-        name: "id",
-        message: "What is your employee ID number?"
-    },
-
-    {
-        type: "string",
-        name: "email",
-        message: "What is your preferred email address?"
-    },
-
     {
         type: "list",
         name: "role",
         message: "What is your classification at this company?",
         choices: ["Engineer", "Intern", "Manager"]
     }
-])
-.then(answers => {
-    if(answers.role === 'Engineer'){
-        inquirer.prompt([
-            {
-                type: "input",
-                name: "gitHub",
-                message: "What is your GitHub username?"
-            }
-        ]).then(engineerAnswers => {
-            render([Engineer]);
-            console.log(error);
-        })
-    }else if(answers.role === 'Intern'){
-        inquirer.prompt([
-            {
-                type: "input",
-                name: "school",
-                message: "What college or university do you attend?"
-            }
-        ]).then(internAnswers => {
-            render([Intern]);
-        })
-    }else{
-        inquirer.prompt([
-            {
-                type: "input",
-                name: "officeNumber",
-                message: "What is your office number?"
-            }
-        ]).then(managerAnswers =>{
-            render([Manager]);
-            console.log(error);
-        })
-    }
-    
-})
+]).then(answer => {
+        if(answer.role === 'Engineer'){
+            inquirer.prompt([
+                {
+                    type: "input",
+                    name: "gitHub",
+                    message: "What is your GitHub username?"
+                },
 
+                {
+                    type: "string",
+                    name: "name",
+                    message: "What is your name (first and last)?"
+                },
+            
+                {
+                    type: "number",
+                    name: "id",
+                    message: "What is your employee ID number?"
+                },
+            
+                {
+                    type: "string",
+                    name: "email",
+                    message: "What is your preferred email address?"
+                },
 
+            ]).then(partialEmployee => {
+                let employee = {
+                    ...partialEmployee,
+                    ...answer
+                };
+                console.log(employee);
+            })
+        }else if(answers.role === 'Intern'){
+            inquirer.prompt([
+                {
+                    type: "input",
+                    name: "school",
+                    message: "What college or university do you attend?"
+                }
+            ]).then(employee => {
+                console.log(employee);
+                console.log(error);
+            })
+        }else{
+            inquirer.prompt([
+                {
+                    type: "input",
+                    name: "officeNumber",
+                    message: "What is your office number?"
+                }
+            ]).then(employee =>{
+                console.log(employee);
+                console.log(error);
+            })
+        }
+        
+    })
 
-
-
-
-
-
+// ])
 
 
 
@@ -151,8 +148,8 @@ inquirer.prompt([
 //                 name: "gitHub",
 //                 message: "What is your GitHub username?"
 //             }
-//         ]).then(engineerAnswers => {
-//             render([Engineer]);
+//         ]).then(employee => {
+//             console.log(employee);
 //             console.log(error);
 //         })
 //     }else if(answers.role === 'Intern'){
@@ -162,8 +159,9 @@ inquirer.prompt([
 //                 name: "school",
 //                 message: "What college or university do you attend?"
 //             }
-//         ]).then(internAnswers => {
-//             render([Intern]);
+//         ]).then(employee => {
+//             console.log(employee);
+//             console.log(error);
 //         })
 //     }else{
 //         inquirer.prompt([
@@ -172,8 +170,8 @@ inquirer.prompt([
 //                 name: "officeNumber",
 //                 message: "What is your office number?"
 //             }
-//         ]).then(managerAnswers =>{
-//             render([Manager]);
+//         ]).then(employee =>{
+//             console.log(employee);
 //             console.log(error);
 //         })
 //     }
