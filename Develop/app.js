@@ -10,118 +10,153 @@ const outputPath = path.join(OUTPUT_DIR, "team.html");
 
 const render = require("./lib/htmlRenderer");
 
-inquirer.prompt([
-    {
-        type: "list",
-        name: "role",
-        message: "What is your classification at this company?",
-        choices: ["Engineer", "Intern", "Manager"]
-    }
-]).then(answer => {
-        if(answer.role === 'Engineer'){
-            inquirer.prompt([
-                {
-                    type: "input",
-                    name: "gitHub",
-                    message: "What is your GitHub username?"
-                },
+const employees = [];
 
-                {
-                    type: "string",
-                    name: "name",
-                    message: "What is your name (first and last)?"
-                },
-            
-                {
-                    type: "number",
-                    name: "id",
-                    message: "What is your employee ID number?"
-                },
-            
-                {
-                    type: "string",
-                    name: "email",
-                    message: "What is your preferred email address?"
-                }
-
-            ]).then(partialEmployee => {
-                let employee = {
-                    ...answer,
-                    ...partialEmployee
-                };
-                console.log(employee);
-            })
-        }else if(answer.role === 'Intern'){
-            inquirer.prompt([
-                {
-                    type: "input",
-                    name: "school",
-                    message: "What college or university do you attend?"
-                },
-
-                {
-                    type: "string",
-                    name: "name",
-                    message: "What is your name (first and last)?"
-                },
-            
-                {
-                    type: "number",
-                    name: "id",
-                    message: "What is your employee ID number?"
-                },
-            
-                {
-                    type: "string",
-                    name: "email",
-                    message: "What is your preferred email address?"
-                }
-
-            ]).then(partialEmployee => {
-                let employee = {
-                    ...answer,
-                    ...partialEmployee
-                };
-                console.log(employee);
-            })
-        }else if(answer.role === 'Manager'){
-            inquirer.prompt([
-                {
-                    type: "input",
-                    name: "officeNumber",
-                    message: "What is your office number?"
-                },
-
-                {
-                    type: "string",
-                    name: "name",
-                    message: "What is your name (first and last)?"
-                },
-            
-                {
-                    type: "number",
-                    name: "id",
-                    message: "What is your employee ID number?"
-                },
-            
-                {
-                    type: "string",
-                    name: "email",
-                    message: "What is your preferred email address?"
-                }
-                
-            ]).then(partialEmployee => {
-                let employee = {
-                    ...answer,
-                    ...partialEmployee
-                };
-                console.log(employee);
-            })
+const addMore = () => {
+    inquirer.prompt([
+        {
+            type: "confirm",
+            name: "addingMore",
+            message: "Do you want to add more employees?"
+        }
+    ]).then((response) => {
+        if(response.addingMore === true) {
+            employeeQuestions();
+        }else{
+            console.log("Generating your custom employee webpage...")
         }
         
     })
+};
 
-// ])
+const employeeQuestions = () => {
+
+    inquirer
+    .prompt([
+      {
+        type: "list",
+        name: "role",
+        message: "What is your classification at this company?",
+        choices: ["Engineer", "Intern", "Manager"],
+      },
+    ])
+    .then((answer) => {
+      if (answer.role === "Engineer") {
+        inquirer
+          .prompt([
+            {
+              type: "input",
+              name: "gitHub",
+              message: "What is your GitHub username?",
+            },
+  
+            {
+              type: "string",
+              name: "name",
+              message: "What is your name (first and last)?",
+            },
+  
+            {
+              type: "number",
+              name: "id",
+              message: "What is your employee ID number?",
+            },
+  
+            {
+              type: "string",
+              name: "email",
+              message: "What is your preferred email address?",
+            },
+          ])
+          .then((partialEmployee) => {
+            let employee = {
+              ...answer,
+              ...partialEmployee,
+            };
+            console.log(employee);
+            employees.push(employee);
+            addMore();
+          });
+      } else if (answer.role === "Intern") {
+        inquirer
+          .prompt([
+            {
+              type: "input",
+              name: "school",
+              message: "What college or university do you attend?",
+            },
+  
+            {
+              type: "string",
+              name: "name",
+              message: "What is your name (first and last)?",
+            },
+  
+            {
+              type: "number",
+              name: "id",
+              message: "What is your employee ID number?",
+            },
+  
+            {
+              type: "string",
+              name: "email",
+              message: "What is your preferred email address?",
+            },
+          ])
+          .then((partialEmployee) => {
+            let employee = {
+              ...answer,
+              ...partialEmployee,
+            };
+            console.log(employee);
+            employees.push(employee);
+            addMore();
+          });
+      } else if (answer.role === "Manager") {
+        inquirer
+          .prompt([
+            {
+              type: "input",
+              name: "officeNumber",
+              message: "What is your office number?",
+            },
+  
+            {
+              type: "string",
+              name: "name",
+              message: "What is your name (first and last)?",
+            },
+  
+            {
+              type: "number",
+              name: "id",
+              message: "What is your employee ID number?",
+            },
+  
+            {
+              type: "string",
+              name: "email",
+              message: "What is your preferred email address?",
+            },
+          ])
+          .then((partialEmployee) => {
+            let employee = {
+              ...answer,
+              ...partialEmployee,
+            };
+            console.log(employee);
+            employees.push(employee);
+            addMore();
+          });
+      }
+    });
+
+}
+
+
+
+employeeQuestions();
 
 
 
@@ -157,6 +192,21 @@ inquirer.prompt([
 
 
 
+
+
+
+// inquirer.prompt([
+//         {
+//             type: "confirm",
+//             name: "addMore",
+//             message: "Do you need to add more employees?",
+//             default: ["Yes", "No"]
+//         }
+//         ]).then(response =>{
+//             if(response.addMore === "Yes"){
+//                 employeeQuestions;
+//             }
+//         });
 
 // inquirer.prompt([
 //     {
@@ -219,7 +269,7 @@ inquirer.prompt([
 //             console.log(error);
 //         })
 //     }
-    
+
 // })
 
 // Write code to use inquirer to gather information about the development team members,
