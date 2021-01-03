@@ -9,154 +9,177 @@ const OUTPUT_DIR = path.resolve(__dirname, "output");
 const outputPath = path.join(OUTPUT_DIR, "team.html");
 
 const render = require("./lib/htmlRenderer");
+const Employee = require("./lib/Employee");
 
-const employees = [];
+// const employees = [];
 
-const addMore = () => {
-    inquirer.prompt([
-        {
-            type: "confirm",
-            name: "addingMore",
-            message: "Do you want to add more employees?"
-        }
-    ]).then((response) => {
-        if(response.addingMore === true) {
-            employeeQuestions();
-        }else{
-            console.log("Generating your custom employee webpage...")
-        }
+
+// const addMore = () => {
+//     inquirer.prompt([
+//         {
+//             type: "confirm",
+//             name: "addingMore",
+//             message: "Do you want to add more employees?"
+//         }
+//     ]).then((response) => {
+//         if(response.addingMore === true) {
+//             employeeQuestions();
+//         } else {
+//             console.log("Generating your custom employee webpage...");
+//             render(employees);
+//         }
         
-    })
-};
+//     })
+// };
 
-const employeeQuestions = () => {
+// employee = new Employee();
 
-    inquirer
-    .prompt([
-      {
-        type: "list",
-        name: "role",
-        message: "What is your classification at this company?",
-        choices: ["Engineer", "Intern", "Manager"],
-      },
-    ])
-    .then((answer) => {
-      if (answer.role === "Engineer") {
-        inquirer
-          .prompt([
-            {
-              type: "input",
-              name: "gitHub",
-              message: "What is your GitHub username?",
-            },
+// const employeeQuestions = () => {
+//     inquirer
+//     .prompt([
+//       {
+//         type: "list",
+//         name: "role",
+//         message: "What is your classification at this company?",
+//         choices: ["Engineer", "Intern", "Manager"],
+//       },
+//     ])
+//     .then((answer) => {
+//       if (answer.role === "Engineer") {
+//         inquirer
+//           .prompt([
+//             {
+//               type: "input",
+//               name: "gitHub",
+//               message: "What is your GitHub username?",
+//             },
   
-            {
-              type: "string",
-              name: "name",
-              message: "What is your name (first and last)?",
-            },
+//             {
+//               type: "string",
+//               name: "name",
+//               message: "What is your name (first and last)?",
+//             },
   
-            {
-              type: "number",
-              name: "id",
-              message: "What is your employee ID number?",
-            },
+//             {
+//               type: "number",
+//               name: "id",
+//               message: "What is your employee ID number?",
+//             },
   
-            {
-              type: "string",
-              name: "email",
-              message: "What is your preferred email address?",
-            },
-          ])
-          .then((partialEmployee) => {
-            let employee = {
-              ...answer,
-              ...partialEmployee,
-            };
-            console.log(employee);
-            employees.push(employee);
-            addMore();
-          });
-      } else if (answer.role === "Intern") {
-        inquirer
-          .prompt([
-            {
-              type: "input",
-              name: "school",
-              message: "What college or university do you attend?",
-            },
+//             {
+//               type: "string",
+//               name: "email",
+//               message: "What is your preferred email address?",
+//             },
+//           ])
+//           .then((partialEmployee) => {
+//             let employee = {
+//               ...answer,
+//               ...partialEmployee,
+//             };
+//             console.log(employee);
+//             employees.push(employee);
+//             console.log(employees);
+//             addMore();
+//           });
+//       } else if (answer.role === "Intern") {
+//         inquirer
+//           .prompt([
+//             {
+//               type: "input",
+//               name: "school",
+//               message: "What college or university do you attend?",
+//             },
   
-            {
-              type: "string",
-              name: "name",
-              message: "What is your name (first and last)?",
-            },
+//             {
+//               type: "string",
+//               name: "name",
+//               message: "What is your name (first and last)?",
+//             },
   
-            {
-              type: "number",
-              name: "id",
-              message: "What is your employee ID number?",
-            },
+//             {
+//               type: "number",
+//               name: "id",
+//               message: "What is your employee ID number?",
+//             },
   
-            {
-              type: "string",
-              name: "email",
-              message: "What is your preferred email address?",
-            },
-          ])
-          .then((partialEmployee) => {
-            let employee = {
-              ...answer,
-              ...partialEmployee,
-            };
-            console.log(employee);
-            employees.push(employee);
-            addMore();
-          });
-      } else if (answer.role === "Manager") {
-        inquirer
-          .prompt([
-            {
-              type: "input",
-              name: "officeNumber",
-              message: "What is your office number?",
-            },
+//             {
+//               type: "string",
+//               name: "email",
+//               message: "What is your preferred email address?",
+//             },
+//           ])
+//           .then((partialEmployee) => {
+//             let employee = {
+//               ...answer,
+//               ...partialEmployee,
+//             };
+//             console.log(employee);
+//             employees.push(employee);
+//             addMore();
+//           });
+//       } else if (answer.role === "Manager") {
+//         inquirer
+//           .prompt([
+//             {
+//               type: "input",
+//               name: "officeNumber",
+//               message: "What is your office number?",
+//             },
   
-            {
-              type: "string",
-              name: "name",
-              message: "What is your name (first and last)?",
-            },
+//             {
+//               type: "string",
+//               name: "name",
+//               message: "What is your name (first and last)?",
+//             },
   
-            {
-              type: "number",
-              name: "id",
-              message: "What is your employee ID number?",
-            },
+//             {
+//               type: "number",
+//               name: "id",
+//               message: "What is your employee ID number?",
+//             },
   
-            {
-              type: "string",
-              name: "email",
-              message: "What is your preferred email address?",
-            },
-          ])
-          .then((partialEmployee) => {
-            let employee = {
-              ...answer,
-              ...partialEmployee,
-            };
-            console.log(employee);
-            employees.push(employee);
-            addMore();
-          });
-      }
-    });
+//             {
+//               type: "string",
+//               name: "email",
+//               message: "What is your preferred email address?",
+//             },
+//           ])
+//           .then((partialEmployee) => {
+//             let employee = {
+//               ...answer,
+//               ...partialEmployee,
+//             };
+//             console.log(employee);
+//             employees.push(employee);
+//             addMore();
+//           });
+//       }
+//     });
 
-}
+// }
+
+// const addMore = () => {
+//   inquirer.prompt([
+//       {
+//           type: "confirm",
+//           name: "addingMore",
+//           message: "Do you want to add more employees?"
+//       }
+//   ]).then((response) => {
+//       if(response.addingMore === true) {
+//           employeeQuestions();
+//       } else {
+//           console.log("Generating your custom employee webpage...");
+//           render(employees);
+//       }
+      
+//   })
+// };
 
 
 
-employeeQuestions();
+// employeeQuestions();
 
 
 
@@ -242,10 +265,11 @@ employeeQuestions();
 //                 name: "gitHub",
 //                 message: "What is your GitHub username?"
 //             }
-//         ]).then(employee => {
-//             console.log(employee);
-//             console.log(error);
-//         })
+//         ])
+//         // .then(employee => {
+//         //     console.log(employee);
+//         //     console.log(error);
+//         // })
 //     }else if(answers.role === 'Intern'){
 //         inquirer.prompt([
 //             {
@@ -253,21 +277,23 @@ employeeQuestions();
 //                 name: "school",
 //                 message: "What college or university do you attend?"
 //             }
-//         ]).then(employee => {
-//             console.log(employee);
-//             console.log(error);
-//         })
-//     }else{
+//         ])
+//         // .then(employee => {
+//         //     console.log(employee);
+//         //     console.log(error);
+//         // })
+//     } else if (answers.role === 'Manager'){
 //         inquirer.prompt([
 //             {
 //                 type: "input",
 //                 name: "officeNumber",
 //                 message: "What is your office number?"
 //             }
-//         ]).then(employee =>{
-//             console.log(employee);
-//             console.log(error);
-//         })
+//         ])
+//         // .then(employee =>{
+//         //     console.log(employee);
+//         //     console.log(error);
+//         // })
 //     }
 
 // })
@@ -294,3 +320,111 @@ employeeQuestions();
 // for further information. Be sure to test out each class and verify it generates an
 // object with the correct structure and methods. This structure will be crucial in order
 // for the provided `render` function to work! ```
+
+employee = new Employee();
+const employees = [];
+
+const employeeQuestions = () => {
+inquirer.prompt([
+  {
+      type: "string",
+      name: "name",
+      message: "What is your name (first and last)?"
+  },
+
+  {
+      type: "number",
+      name: "id",
+      message: "What is your employee ID number?"
+  },
+
+  {
+      type: "string",
+      name: "email",
+      message: "What is your preferred email address?"
+  },
+
+  {
+      type: "list",
+      name: "role",
+      message: "What is your classification at this company?",
+      choices: ["Engineer", "Intern", "Manager"]
+  }
+])
+.then((answers) => {
+  if(answers.role === 'Engineer'){
+      inquirer.prompt([
+          {
+              type: "input",
+              name: "gitHub",
+              message: "What is your GitHub username?"
+          }
+      ]).then((completeEmployee) => {
+        let employee = {
+          ...answers,
+          ...completeEmployee,
+          };
+          employees.push(employee);
+          console.log(employees);
+          addMore();
+      });
+  }else if(answers.role === 'Intern'){
+      inquirer.prompt([
+          {
+              type: "input",
+              name: "school",
+              message: "What college or university do you attend?"
+          }
+      ]).then((completeEmployee) => {
+        let employee = {
+          ...answers,
+          ...completeEmployee,
+          };
+          employees.push(employee);
+          console.log(employees);
+          addMore();
+      });
+  } else if (answers.role === 'Manager'){
+      inquirer.prompt([
+          {
+              type: "input",
+              name: "officeNumber",
+              message: "What is your office number?"
+          }
+      ]).then((completeEmployee) => {
+        let employee = {
+          ...answers,
+          ...completeEmployee,
+          };
+        employees.push(employee);
+        console.log(employees);
+        addMore();
+      });
+  };
+
+});
+};
+
+const addMore = async () => {
+    inquirer.prompt([
+        {
+            type: "confirm",
+            name: "addingMore",
+            message: "Do you want to add more employees?"
+        }
+    ]).then((response) => {
+        if(response.addingMore === true) {
+            employeeQuestions();
+        } else {
+            console.log("Generating your custom employee webpage...");
+            async () => { 
+              const response = await response.addingMore(false);
+              render(employees)
+            };
+        };
+        
+    });
+
+};
+
+employeeQuestions();
