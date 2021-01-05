@@ -7,7 +7,8 @@ class Intern extends Employee {
         this.school = school;
     }
     getRole() {
-        return "Intern";
+        const role = "Intern";
+        return role;
     }
     getSchool() {
         return this.school;
