@@ -5,10 +5,10 @@ class Intern extends Employee {
     constructor(name, id, email, school) {
         super(name, id, email);
         this.school = school;
+        this.role = "Intern";
     }
     getRole() {
-        const role = "Intern";
-        return role;
+        return this.role;
     }
     getSchool() {
         return this.school;

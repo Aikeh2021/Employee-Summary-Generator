@@ -5,10 +5,10 @@ class Engineer extends Employee{
     constructor(name, id, email, gitHubUser) {
         super(name, id, email);
         this.gitHub = gitHubUser;
+        this.role = "Engineer";
     }
     getRole() {
-        const role = "Engineer";
-        return role;
+        return this.role;
     }
     getGitHub() {
         return this.gitHub;

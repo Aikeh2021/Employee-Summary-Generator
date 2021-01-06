@@ -9,7 +9,6 @@ const OUTPUT_DIR = path.resolve(__dirname, "output");
 const outputPath = path.join(OUTPUT_DIR, "team.html");
 
 const render = require("./lib/htmlRenderer");
-const Employee = require("./lib/Employee");
 
 // const employees = [];
 
@@ -405,7 +404,29 @@ inquirer.prompt([
 });
 };
 
-const addMore = async () => {
+// const addMore = async () => {
+//     inquirer.prompt([
+//         {
+//             type: "confirm",
+//             name: "addingMore",
+//             message: "Do you want to add more employees?"
+//         }
+//     ]).then((response) => {
+//         if(response.addingMore === true) {
+//             employeeQuestions();
+//         } else {
+//             console.log("Generating your custom employee webpage...");
+//             async () => { 
+//               const response = await response.addingMore(false);
+//               render();
+//             };
+//         };
+        
+//     });
+
+// };
+
+const addMore = () => {
     inquirer.prompt([
         {
             type: "confirm",
@@ -417,14 +438,12 @@ const addMore = async () => {
             employeeQuestions();
         } else {
             console.log("Generating your custom employee webpage...");
-            async () => { 
-              const response = await response.addingMore(false);
-              render(employees)
+              render();
             };
-        };
+        });
         
-    });
+    };
 
-};
+
 
 employeeQuestions();
