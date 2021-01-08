@@ -51,7 +51,6 @@ inquirer.prompt([
           }
       ]).then((completeEmployee) => {
         let employee = new Engineer(answers.name, answers.id, answers.email, answers.role, completeEmployee.github);
-        console.log(employee);
           employees.push(employee);
           console.log(employees);
           addMore();
@@ -103,16 +102,21 @@ const addMore = () => {
             employeeQuestions();
         } else {
             console.log("Generating your custom employee webpage...");
-              render(employees);
+              const renderingHTML = render(employees);
+              fs.writeFile(outputPath, renderingHTML, "utf8", (err) => {
+                if(err){
+                    console.log(err);
+                }else{
+                    console.log("Your generated team file is ready for view!");
+                };
+            });
             };
         });
         
     };
 
 
-fs.writeFile("team.html", utf8, () => {
 
-})
 
 
 
