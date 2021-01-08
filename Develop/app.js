@@ -69,8 +69,7 @@ inquirer.prompt([
           console.log(employees);
           addMore();
       });
-  } else if (answers.role === 'Manager'){
-    console.log(answers);  
+  } else if (answers.role === 'Manager'){ 
     inquirer.prompt([
           {
               type: "input",

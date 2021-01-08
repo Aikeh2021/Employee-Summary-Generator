@@ -7,9 +7,16 @@
 * [License](license)
 * [Credits](credits)
 
+
+## A Quick And Easy Employee Archive
+
+Are you a company manager looking for an easy way to showcase the employees at your business? Well look no further, the Employee Summary Generator is an app that allows you to input basic, but necessary, information about each of your employees and serves them up on a web page that is easy to read! This application takes away the time consuming work of creating a website by allowing you to just put in the information and have a finished product made for you. If only remembering your subordinates' names were this easy!
+Read the installation instructions below to get started.
+
+
 ## Installation
 
-To view the 
+To view the github repository for this application [click here](). Otherwise, click here to view a video demonstrating the functionality of this app.
 
 
 ## Usage
@@ -48,4 +55,4 @@ SOFTWARE.
 * [List Type in Inquirer.Prompt](https://medium.com/javascript-in-plain-english/how-to-inquirer-js-c10a4e05ef1f)
 * [Merging Javascript Objects](https://www.javascripttutorial.net/object/javascript-merge-objects/) 
 * [fs.writeFile Method](https://www.geeksforgeeks.org/node-js-fs-writefile-method/)
-* []
+* [Markdown License Badges](https://gist.github.com/lukas-h/2a5d00690736b4c3a7ba)
