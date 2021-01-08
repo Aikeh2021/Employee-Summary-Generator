@@ -1,12 +1,15 @@
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) 
 # Employee Summary Generator
 
 ## Contents
-* []
+* [Installation](installation)
 * [Usage](usage)
 * [License](license)
 * [Credits](credits)
 
+## Installation
 
+To view the 
 
 
 ## Usage
@@ -45,3 +48,4 @@ SOFTWARE.
 * [List Type in Inquirer.Prompt](https://medium.com/javascript-in-plain-english/how-to-inquirer-js-c10a4e05ef1f)
 * [Merging Javascript Objects](https://www.javascripttutorial.net/object/javascript-merge-objects/) 
 * [fs.writeFile Method](https://www.geeksforgeeks.org/node-js-fs-writefile-method/)
+* []
