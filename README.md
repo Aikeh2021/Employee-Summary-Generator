@@ -17,7 +17,7 @@ Read the installation instructions below to get started.
 
 ## Installation
 
-To view the github repository for this application [click here](https://drive.google.com/file/d/14AEIh2H-fXricya0zidnEcUirDeQpVCF/preview). Otherwise, click here to view a video demonstrating the functionality of this app.
+To view the github repository for this application [click here](https://github.com/Aikeh2021/Employee-Summary-Generator). Otherwise, [click here](https://drive.google.com/file/d/14AEIh2H-fXricya0zidnEcUirDeQpVCF/view) to view a video demonstrating the functionality of this app.
 
 
 ## Usage
