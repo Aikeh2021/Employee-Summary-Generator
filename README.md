@@ -29,7 +29,7 @@ After you have entered in all of the information for your desired employees, tel
 
 MIT License
 
-Copyright © 2020 Ashley Ikeh
+Copyright © 2020 [Ashley Ikeh](https://github.com/Aikeh2021)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
