@@ -13,6 +13,7 @@
 Are you a company manager looking for an easy way to showcase the employees at your business? Well look no further, the Employee Summary Generator is an app that allows you to input basic, but necessary, information about each of your employees and serves them up on a web page that is easy to read! This application takes away the time consuming work of creating a website by allowing you to just put in the information and have a finished product made for you. If only remembering your subordinates' names were this easy!
 Read the installation instructions below to get started.
 
+![Team generator homepage](Develop/assets/team-generator.png)
 
 ## Installation
 
