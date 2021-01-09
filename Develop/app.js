@@ -46,7 +46,7 @@ inquirer.prompt([
       inquirer.prompt([
           {
               type: "input",
-              name: "gitHub",
+              name: "github",
               message: "What is your GitHub username?"
           }
       ]).then((completeEmployee) => {
