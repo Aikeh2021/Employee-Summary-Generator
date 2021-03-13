@@ -13,11 +13,11 @@
 Are you a company manager looking for an easy way to showcase the employees at your business? Well look no further, the Employee Summary Generator is an app that allows you to input basic, but necessary, information about each of your employees and serves them up on a web page that is easy to read! This application takes away the time consuming work of creating a website by allowing you to just put in the information and have a finished product made for you. If only remembering your subordinates' names were this easy!
 Read the installation instructions below to get started.
 
-![Team generator homepage](Develop/assets/team-generator.png)
+![Team generator homepage](assets/Generated-Team-Page.gif)
 
 ## Installation
 
-To view the github repository for this application [click here](https://github.com/Aikeh2021/Employee-Summary-Generator). Otherwise, [click here](https://drive.google.com/file/d/14AEIh2H-fXricya0zidnEcUirDeQpVCF/view) to view a video demonstrating the functionality of this app.
+To view the github repository for this application [click here](https://github.com/Aikeh2021/Employee-Summary-Generator). Otherwise, [click here](https://drive.google.com/file/d/1vYwSPdL0pSNiCA0gEAY2T07M_1p3-_iD/view) to view a video demonstrating the functionality of this app.
 
 
 ## Usage
@@ -35,6 +35,7 @@ After you have entered in all of the information for your desired employees, tel
 * [Merging Javascript Objects](https://www.javascripttutorial.net/object/javascript-merge-objects/) 
 * [fs.writeFile Method](https://www.geeksforgeeks.org/node-js-fs-writefile-method/)
 * [Markdown License Badges](https://gist.github.com/lukas-h/2a5d00690736b4c3a7ba)
+* [Types of Event Listeners on the DOM](https://www.w3schools.com/js/js_htmldom_eventlistener.asp)
 
 
 ## License

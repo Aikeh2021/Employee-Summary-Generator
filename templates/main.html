@@ -36,10 +36,9 @@
     <script>
       console.log("I'm connected!");
       var cards = document.querySelectorAll('.employee-card');
-      cards.forEach(card => card.addEventListener('mouseover', function(e){
+      cards.forEach(card => card.addEventListener('mouseover', function(){
         if(!card) return;
         card.classList.add('magnify');
-        console.log(e);
       }));
       cards.forEach(card => card.addEventListener('mouseout', function(){
         if(!card) return;
