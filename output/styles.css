@@ -1,0 +1,13 @@
+body {
+    background-image: url("../assets/myTeam.jpeg");
+    background-size: cover;
+}
+
+.card {
+    margin: 20px;
+}
+
+.magnify {
+    transform: scale(1.25);
+    transition: all .02s ease;
+}

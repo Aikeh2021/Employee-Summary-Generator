@@ -4,8 +4,8 @@
 ## Contents
 * [Installation](installation)
 * [Usage](usage)
-* [License](license)
 * [Credits](credits)
+* [License](license)
 
 
 ## A Quick And Easy Employee Archive
@@ -24,6 +24,18 @@ To view the github repository for this application [click here](https://github.c
 
 To use this app, use your terminal to navigate to the directory underwhich the repository has been stored. Type the command 'node app.js' into the command line. This will begin a series of prompts. Answer each response with the knowledge you have of your employees. As manager, don't forget that you are also included as an employee of the company. This way if the site is viewed by new employees, they have information on you as well.
 After you have entered in all of the information for your desired employees, tell the command line that you no longer wish to add more employees. Once the computer receives this input, your team website will be generated and store in the output directory.  
+
+
+## Credits
+
+* [Office Background Image](https://unsplash.com/photos/U2BI3GMnSSE)
+* [Using super](https://www.w3schools.com/jsref/jsref_class_super.asp)
+* [Making Complex Inquirer.Prompts](https://www.digitalocean.com/community/tutorials/nodejs-interactive-command-line-prompts#multiple-prompts)
+* [List Type in Inquirer.Prompt](https://medium.com/javascript-in-plain-english/how-to-inquirer-js-c10a4e05ef1f)
+* [Merging Javascript Objects](https://www.javascripttutorial.net/object/javascript-merge-objects/) 
+* [fs.writeFile Method](https://www.geeksforgeeks.org/node-js-fs-writefile-method/)
+* [Markdown License Badges](https://gist.github.com/lukas-h/2a5d00690736b4c3a7ba)
+
 
 ## License
 
@@ -49,11 +61,4 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
-## Credits
 
-* [Using super](https://www.w3schools.com/jsref/jsref_class_super.asp)
-* [Making Complex Inquirer.Prompts](https://www.digitalocean.com/community/tutorials/nodejs-interactive-command-line-prompts#multiple-prompts)
-* [List Type in Inquirer.Prompt](https://medium.com/javascript-in-plain-english/how-to-inquirer-js-c10a4e05ef1f)
-* [Merging Javascript Objects](https://www.javascripttutorial.net/object/javascript-merge-objects/) 
-* [fs.writeFile Method](https://www.geeksforgeeks.org/node-js-fs-writefile-method/)
-* [Markdown License Badges](https://gist.github.com/lukas-h/2a5d00690736b4c3a7ba)

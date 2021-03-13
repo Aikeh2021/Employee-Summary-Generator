@@ -42,7 +42,7 @@ inquirer.prompt([
   }
 ])
 .then((answers) => {
-  if(answers.role === 'Engineer'){
+  if(answers.role === "Engineer"){
       inquirer.prompt([
           {
               type: "input",
@@ -50,13 +50,12 @@ inquirer.prompt([
               message: "What is your GitHub username?"
           }
       ]).then((completeEmployee) => {
-        let employee = new Engineer(answers.name, answers.id, answers.email, answers.role, completeEmployee.github);
+        let employee = new Engineer(answers.name, answers.id, answers.email, completeEmployee.github);
           employees.push(employee);
           console.log(employees);
           addMore();
-        render(employees);
       });
-  }else if(answers.role === 'Intern'){
+  }else if(answers.role === "Intern"){
       inquirer.prompt([
           {
               type: "input",
@@ -64,12 +63,12 @@ inquirer.prompt([
               message: "What college or university do you attend?"
           }
       ]).then((completeEmployee) => {
-        let employee = new Intern(answers.name, answers.id, answers.email, answers.role, completeEmployee.school);
+        let employee = new Intern(answers.name, answers.id, answers.email, completeEmployee.school);
           employees.push(employee);
           console.log(employees);
           addMore();
       });
-  } else if (answers.role === 'Manager'){ 
+  } else if (answers.role === "Manager"){ 
     inquirer.prompt([
           {
               type: "input",
@@ -77,7 +76,7 @@ inquirer.prompt([
               message: "What is your office number?"
           }
       ]).then((completeEmployee) => {
-        let employee = new Manager(answers.name, answers.id, answers.email, answers.role, completeEmployee.officeNumber);
+        let employee = new Manager(answers.name, answers.id, answers.email, completeEmployee.officeNumber);
         employees.push(employee);
         console.log(employees);
         addMore();
@@ -113,8 +112,6 @@ const addMore = () => {
         });
         
     };
-
-
 
 
 
